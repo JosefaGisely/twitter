@@ -27,16 +27,19 @@ public class UsuarioDAO {
         this.conn = new FabricaConexoes().getConnection();
     }
     
+    // Metodo que fecha conexao com o banco de dados.
     public void fechaConexao() throws SQLException{
         conn.close();
     }
     
-    public void adiciona(Usuario u){     
+    public void adiciona(Usuario u){    
+        //inserir dados em uma tabela de um banco de dados SQL
         String sql = "INSERT INTO usuario "
                 + "(nomeCompleto, dataNascimento, apelido, email, senha) "
                 + "values (?, ?, ?, ?, ?)";
         
         try {
+            // preenche os valores 
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, u.getNomeCompleto());
             stmt.setLong(2, u.getDataNascimento());
@@ -44,8 +47,11 @@ public class UsuarioDAO {
             stmt.setString(4, u.getEmail());
             stmt.setString(5, u.getSenha());
 
+            // Executa o Statment
             stmt.execute();
+            // Encerra o Statment
             stmt.close();
+            // Fecha conexão BD
             fechaConexao();
         } catch (SQLException  e) {
             throw new RuntimeException(e);
@@ -75,7 +81,7 @@ public class UsuarioDAO {
             rs.close();
             // Encerra o Statment
             stmt.close();
-            // Fecha conexão
+            // Fecha conexão BD
             fechaConexao();
             // Retorna a lista de Usuários do BD
             return usuariosList;
@@ -108,7 +114,7 @@ public class UsuarioDAO {
             rs.close();
             // Encerra o Statment
             stmt.close();
-            
+            // Fecha conexão BD
             fechaConexao();
             // Retorna a lista de Usuários do BD
             return usuario;
@@ -141,7 +147,7 @@ public class UsuarioDAO {
             rs.close();
             // Encerra o Statment
             stmt.close();
-            
+            // Fecha conexão BD
             fechaConexao();
             // Retorna a lista de Usuários do BD
             return usuario;
@@ -177,7 +183,7 @@ public class UsuarioDAO {
             rs.close();
             // Encerra o Statment
             stmt.close();
-            
+            // Fecha conexão BD
             fechaConexao();
             // Retorna a lista de Usuários do BD
             return usuario;
@@ -202,8 +208,11 @@ public class UsuarioDAO {
             stmt.setString(5, u.getSenha());
             stmt.setString(6, String.valueOf(u.getIdUsuario()));
             System.out.println(stmt.toString());
+            // Executa o Statment
             stmt.execute();
+            // Encerra o Statment
             stmt.close();
+            // Fecha conexão BD
             fechaConexao();
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -218,8 +227,11 @@ public class UsuarioDAO {
             stmt.setString(1, u.getSenha());
             stmt.setInt(2, (u.getIdUsuario()));
             System.out.println(stmt.toString());
+            // Executa o Statment
             stmt.execute();
+            // Encerra o Statment
             stmt.close();
+            // Fecha conexão BD
             fechaConexao();
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -234,8 +246,11 @@ public class UsuarioDAO {
             
             PreparedStatement stmt = this.conn.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
             stmt.setInt(1, id);
+            // Executa o Statment
             stmt.execute();
+            // Encerra o Statment
             stmt.close();
+            // Fecha conexão BD
             fechaConexao();
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);

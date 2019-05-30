@@ -66,7 +66,7 @@ public class PublicacaoServlet extends HttpServlet {
     private void listaPublicacaoUsuario(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
        if (request.getSession().getAttribute("usuarioLogado") == null){
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("home.jsp");
            return;
        } else{
             // Adiciona o usuário
@@ -93,7 +93,7 @@ public class PublicacaoServlet extends HttpServlet {
     private void listaTodasPublicacoes(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException{
          if (request.getSession().getAttribute("usuarioLogado") == null){
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("home.jsp");
             return;
         } else{
             ArrayList<Publicacao> listaPublicacoes = (ArrayList<Publicacao>)(new PublicacaoDAO()).listaTodos();
@@ -115,7 +115,7 @@ public class PublicacaoServlet extends HttpServlet {
     private void removePublicacao(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         if (request.getSession().getAttribute("usuarioLogado") == null){
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("home.jsp");
             return;
         } else{
             // Cria um objeto de acesso ao BD
@@ -137,7 +137,7 @@ public class PublicacaoServlet extends HttpServlet {
             throws ServletException, IOException {
             
         if (request.getSession().getAttribute("usuarioLogado") == null){
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("home.jsp");
             return;
         } else{
             Usuario usuarioLogado = (new UsuarioDAO()).buscaPorEmail(((Usuario) request.getSession().getAttribute("usuarioLogado")).getEmail());
@@ -168,7 +168,7 @@ public class PublicacaoServlet extends HttpServlet {
     private void criaComentario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         
         if (request.getSession().getAttribute("usuarioLogado") == null){
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("home.jsp");
             return;
         }else{
             // Instancia um novo comentario

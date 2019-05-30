@@ -31,7 +31,7 @@
                             <p>Confirme a senha:</p>
                             <input type="password" name="confirmasenha" required>
                             <div class="botoes">
-                                <a href="index.jsp"><input id="cancelarRec" type="button" name="cancelar" value="Cancelar"></a>
+                                <a href="home.jsp"><input id="cancelarRec" type="button" name="cancelar" value="Cancelar"></a>
                                 <a href="#"><input id="cadastrarRec" type="submit" name="enviar" value="Recuperar"></a>
                             </div>
                         </div>

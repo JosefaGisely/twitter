@@ -39,7 +39,7 @@
                             <p>Confirmação de senha:</p>
                             <input id="date"  name="confSenha" type="password"  required>
                         </div>
-                        <a href="index.jsp"><input id="cancelar" type="button" name="cancelar" value="Cancelar"></a>
+                        <a href="home.jsp"><input id="cancelar" type="button" name="cancelar" value="Cancelar"></a>
                         <input id="cadastrar" type="submit" name="enviar" value="Cadastrar">
                 </form>
 

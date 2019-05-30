@@ -11,26 +11,27 @@ public class Comentario {
     private String texto;
     private long dataComentario;
     private Usuario autor;
-//    private int publicacao;
 
+    //Construtores
     public Comentario() {
     }
 
-    public Comentario(String texto, long dataComentario , Usuario autor /*, int publicacao */) {
+    public Comentario(String texto, long dataComentario , Usuario autor) {
         this.texto = texto;
         this.dataComentario = dataComentario;
         this.autor = autor;
-//        this.publicacao = publicacao;
+
     }
     
-    public Comentario(int idComentario, String texto, long dataComentario , Usuario autor /*, int publicacao*/) {
+    public Comentario(int idComentario, String texto, long dataComentario , Usuario autor) {
         this.idComentario = idComentario;
         this.texto = texto;
         this.dataComentario = dataComentario;
         this.autor = autor;
-//        this.publicacao = publicacao;
+
     }
 
+    // metodos get e set para IdComentario, Texto, DataComentario e Autor.
     public int getIdComentario() {
         return idComentario;
     }
@@ -61,15 +62,5 @@ public class Comentario {
 
     public void setAutor(Usuario autor) {
         this.autor = autor;
-    }
-
-//    public int getPublicacao() {
-//        return publicacao;
-//    }
-//
-//    public void setPublicacao(int publicacao) {
-//        this.publicacao = publicacao;
-//    }
-    
-    
+    }    
 }

@@ -17,6 +17,7 @@ public class Usuario {
     public Usuario() {
     }
 
+    // Construtores
     public Usuario(String nomeCompleto, long dataNascimento, String apelido, String email, String senha) {
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -34,6 +35,7 @@ public class Usuario {
         this.senha = senha;
     }
 
+    // metodos get e set para IdUsuario, NomeCompleto, DataNascimento, Apelido, Email e Senha.
     public int getIdUsuario() {
         return idUsuario;
     }

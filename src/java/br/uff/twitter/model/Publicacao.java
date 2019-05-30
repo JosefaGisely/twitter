@@ -16,6 +16,7 @@ public class Publicacao {
     private long dataPublicacao;
     private List<Comentario> listaComentarios = new ArrayList<>();
 
+    //construtores
     public Publicacao() {
     }
 
@@ -40,8 +41,12 @@ public class Publicacao {
         this.listaComentarios = comentariosList;
     }
     
+    //metodo para adicionar um novo comentario na lista de comentarios da publicacao
+    public void adicionaComentario(Comentario c){
+        listaComentarios.add(c);
+    }
     
-
+    // metodos get e set para IdPublicacao, Texto, Autor, DataPublicacao e ListaComentarios.
     public int getIdPublicacao() {
         return idPublicacao;
     }
@@ -81,12 +86,5 @@ public class Publicacao {
     public void setListaComentarios(List<Comentario> listaComentarios) {
         this.listaComentarios = listaComentarios;
     }
-    
-    public void adicionaComentario(Comentario c){
-        listaComentarios.add(c);
-    }
-    
-    
-    
     
 }

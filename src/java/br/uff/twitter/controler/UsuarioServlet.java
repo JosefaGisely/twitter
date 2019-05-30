@@ -85,7 +85,7 @@ public class UsuarioServlet extends HttpServlet {
     private void atualizaUsuario(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, ParseException{
         if (request.getSession().getAttribute("usuarioLogado") == null){
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("home.jsp");
            return;
        } else{
         
@@ -122,7 +122,7 @@ public class UsuarioServlet extends HttpServlet {
         // Chama método para cadastrar usuário
         usuarioDAO.alteraSenha(usuario);
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("home.jsp");
     }
     
     private void fazLogin(HttpServletRequest request, HttpServletResponse response)
@@ -139,20 +139,20 @@ public class UsuarioServlet extends HttpServlet {
             // Redireciona
             getServletConfig().getServletContext().getRequestDispatcher("/PublicacaoServlet?operacao=4").forward(request, response);
         } else{
-            response.sendRedirect("/index.jsp");
+            response.sendRedirect("home.jsp");
         }
     }
     
     private void fazLogout(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         request.getSession().invalidate();
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("home.jsp");
     }
     
     private void trocaTela(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException{
         if (request.getSession().getAttribute("usuarioLogado") == null){
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("home.jsp");
            return;
        } else{
             response.sendRedirect("conta.jsp");
